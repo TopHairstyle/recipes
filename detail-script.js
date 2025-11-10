@@ -1,3 +1,20 @@
+// ▼▼▼ FUNGSI BARU: Untuk memuat skrip secara dinamis ▼▼▼
+/**
+ * Fungsi untuk memuat skrip eksternal secara dinamis dan aman
+ * @param {string} url - URL dari skrip yang akan dimuat
+ */
+function loadScript(url) {
+    var script = document.createElement('script');
+    script.src = url;
+    script.async = true; // Non-blocking
+    script.onerror = function() {
+        console.error('Gagal memuat skrip iklan:', url);
+    };
+    document.body.appendChild(script); // Tambahkan ke body
+}
+// ▲▲▲ AKHIR FUNGSI BARU ▲▲▲
+
+
 document.addEventListener('DOMContentLoaded', function() {
     const detailTitle = document.getElementById('detail-title');
     const detailImageContainer = document.getElementById('detail-image-container');
@@ -122,6 +139,16 @@ document.addEventListener('DOMContentLoaded', function() {
         if (relatedCount === 0) { relatedPostsContainer.closest('.related-posts-section').style.display = 'none'; }
     };
 
+    // --- Eksekusi Fungsi Utama ---
     populateMainContent(keyword);
     generateRelatedPosts(keyword);
+
+
+    // ▼▼▼ PENAMBAHAN SKRIP IKLAN BARU SECARA DINAMIS ▼▼▼
+    // Memuat skrip iklan Anda setelah halaman selesai dibuat.
+    loadScript('https://seribudollarperhari.github.io/banner/ad1.js');
+    loadScript('https://seribudollarperhari.github.io/banner/ad2.js');
+    loadScript('https://seribudollarperhari.github.io/banner/nativ.js');
+    // ▲▲▲ AKHIR PENAMBAHAN SKRIP IKLAN ▲▲▲
+
 });
