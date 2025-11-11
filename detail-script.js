@@ -1,9 +1,3 @@
-/*
-Tidak ada perubahan yang diperlukan di file ini.
-Biarkan file ini apa adanya.
-Memanggil iklan di sini DAN di HTML akan menyebabkan error.
-*/
-
 document.addEventListener('DOMContentLoaded', function() {
     const detailTitle = document.getElementById('detail-title');
     const detailImageContainer = document.getElementById('detail-image-container');
